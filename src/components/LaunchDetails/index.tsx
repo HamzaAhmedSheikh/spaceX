@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLaunchInfoQuery } from '../../generated/graphql';
 import LaunchDetails from './LaunchDetails';
 
+interface OwnProps {
+    id: number;
+}
 
- const LaunchDetailsContainer = () => {
-    const { data, error, loading } = useLaunchInfoQuery({variables: {"id": "13"}});
+
+ const LaunchDetailsContainer = ({ id }: OwnProps) => {
+    const { data, error, loading, refetch  } = useLaunchInfoQuery({ variables: { id: String(id) } });
+    
+    useEffect(() => {
+        refetch();
+      }, [id]);
 
     if(loading) {
         return <div> Data is loading.... </div>

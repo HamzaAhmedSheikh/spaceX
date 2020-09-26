@@ -1,8 +1,8 @@
 import React from 'react'
 import { useLaunchesQuery } from '../../generated/graphql';
-import Launch from './Launch'
+import Launch, { OwnProps } from './Launch'
 
- const LaunchContainer = () => {
+ const LaunchContainer = (props:OwnProps) => {
     const { data, error, loading } = useLaunchesQuery();
 
     if(loading) {
@@ -13,7 +13,7 @@ import Launch from './Launch'
         return <div> There was an error. </div>
     }
 
-    return <Launch data={data} />
+    return <Launch data={data} {...props} />
 
  }
 
