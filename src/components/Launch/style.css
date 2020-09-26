@@ -1,0 +1,21 @@
+.Launches {
+    height: 100vh;
+    overflow: hidden auto;
+    background-color: #ececec;
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+.LaunchesOL {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.LaunchesItem {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #919191;
+    cursor: pointer;
+}

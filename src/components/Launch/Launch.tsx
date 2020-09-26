@@ -13,7 +13,7 @@ import './style.css';
            { !!data.launches && data.launches.map(
                (launch, i) => !!launch && (
                    <li key={i} className="LaunchesItem">
-                       {launch.mission_name} - {launch.launch_year} ({launch.launch_success})
+                       {launch.mission_name} - {launch.launch_year} ({JSON.stringify(launch.launch_success)})
                    </li>
                )
            )}
