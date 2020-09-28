@@ -8,7 +8,9 @@ interface OwnProps {
 
 
  const LaunchDetailsContainer = ({ id }: OwnProps) => {
-    const { data, error, loading, refetch  } = useLaunchInfoQuery({ variables: { id: String(id) } });
+    const { data, error, loading, refetch  } = useLaunchInfoQuery({
+        variables: { id: String(id) }
+    });
     
     useEffect(() => {
         refetch();
